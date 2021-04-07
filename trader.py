@@ -210,9 +210,12 @@ if __name__ == '__main__':
     
     testing_data = load_data(args.testing)
     with open(args.output, 'w') as output_file:
+        count = 1
         for row in testing_data:
             # We will perform your action as the open price in the next day.
             action = trader.predict_action(row)
-            output_file.write(str(action)+"\n")
+            if count < len(testing_data):
+                output_file.write(str(action)+"\n")
+            count +=1
 
 
