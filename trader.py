@@ -17,7 +17,7 @@ class Trader:
         
         model = tf.keras.Sequential([
         
-        tf.keras.layers.LSTM(200,input_shape=data.shape[-2:]),
+        tf.keras.layers.LSTM(500,input_shape=data.shape[-2:]),
         tf.keras.layers.Dense(2)])
 
         
@@ -68,7 +68,7 @@ class Trader:
             for k in range(3,5):
                 temp = target[i+k]
                 ans.append(target[i+k])
-                
+            
             
             y.append(ans)
             x_n = np.array(x)
